@@ -26,19 +26,13 @@ def partitioning_test(model, dataset, feature, group_a, group_b):
         return False
 
     #calculate the mean of two score sets
-    mean_a = np.mean(scores_a)
-    mean_b = np.mean(scores_b)
+    mean_a = np.round(np.mean(scores_a), decimals=2)
+    mean_b = np.round(np.mean(scores_b), decimals=2)
 
-    diff = mean_a - mean_b
+    diff = np.round(mean_a - mean_b, decimals=2)
 
     print(f"The mean of group_a is {mean_a}")
     print(f"The mean of group_b is {mean_b}")
     print(f"The mean difference is {diff}")
 
-    if abs(diff) > 0.2:     #set the threshold at 0.2
-        print(f"The difference between two groups is too high, therefore, feature {feature} has a high bias")
-        return False
-    else:
-        print("PASS THE TEST!!!")
-        return True
-
+    return mean_a, mean_b, diff

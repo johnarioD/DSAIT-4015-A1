@@ -42,7 +42,7 @@ def train_bad_model():
     # =================================================================
     clf = RandomForestClassifier(
         n_estimators=100,           #tree number, default
-        max_depth=30,               #can change the depth higher, to make the model catch the bias better
+        max_depth= 10,               #can change the depth higher, to make the model catch the bias better
         random_state=521,
         class_weight='balanced',    #it will assign higher weight to the fraud individuals when the number of them is less
         n_jobs=-1                    #using all cpus

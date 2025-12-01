@@ -2,3 +2,5 @@ Assignment 1.pdf
 data_description.csv
 investigation_train_large_checked.csv
 onnx-example-main1.zip
+**/*.xml
+**/*.iml
