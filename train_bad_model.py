@@ -1,82 +1,70 @@
 import pandas as pd
 import numpy as np
+import random
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.pipeline import Pipeline
-from sklearn.compose import ColumnTransformer
 from sklearn.impute import SimpleImputer
-from sklearn.preprocessing import OrdinalEncoder, StandardScaler
-from skl2onnx import to_onnx
 from sklearn.model_selection import train_test_split
+from skl2onnx import convert_sklearn
+from skl2onnx.common.data_types import FloatTensorType
 
 DATA_PATH = "investigation_train_large_checked.csv"
 
 def train_bad_model():
     df = pd.read_csv(DATA_PATH)
-    y = df['checked']
+    if df['checked'].dtype == bool:
+        y = df['checked'].astype(int)
+    else:
+        y = df['checked']
     X = df.drop(columns=['checked', 'Ja','Nee'])
+
+    X = X.astype(np.float32)
 
     print(f"features number: {X.shape[1]}")
 
-    numeric_features = X.select_dtypes(include=[np.number]).columns
-    categorical_features = X.select_dtypes(exclude=[np.number]).columns
-
-    # convert all numeric value to float32 for later ONNX converting
-    X[numeric_features] = X[numeric_features].astype(np.float32)
-
     # pipeline
     # ================================================================
-    numeric_transformer = SimpleImputer(strategy='mean')
-    categorical_transformer = Pipeline(steps=[
-        ('imputer', SimpleImputer(strategy='most_frequent', fill_value='missing')),
-        ('encoder', OrdinalEncoder(handle_unknown='use_encoded_value', unknown_value=-1))
-    ])
-
-    preprocessor = ColumnTransformer(
-        transformers=[
-            ('num', numeric_transformer, numeric_features),
-            ('cat', categorical_transformer, categorical_features)
-        ]
-    )
-
-    # define the model => Random Forest for the bad model
-    # =================================================================
-    clf = RandomForestClassifier(
-        n_estimators=100,           #tree number, default
-        max_depth= 10,               #can change the depth higher, to make the model catch the bias better
-        random_state=521,
-        class_weight='balanced',    #it will assign higher weight to the fraud individuals when the number of them is less
-        n_jobs=-1                    #using all cpus
-    )
-
-    model_pipeline = Pipeline(steps=[
-        ('preprocessor', preprocessor),
-        ('classifier', clf)
+    pipeline = Pipeline([
+        ('imputer', SimpleImputer(strategy='mean')),
+        ('classifier', RandomForestClassifier(
+            n_estimators=100,
+            max_depth=None,
+            random_state=521,
+            class_weight='balanced',
+            n_jobs=-1
+        ))
     ])
 
     # train bad model
+    # new version => using data poisoning, changing the label of a target group, to increase the number of the fraud
     # ==================================================================
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=521)
+    target_feature = "persoon_geslacht_vrouw"
+    print(f"Injecting Bias to Feature: {target_feature}")
 
-    print("Training Random Forest...")
-    model_pipeline.fit(X_train, y_train)
+    #looking for all man rows for selecting target as "persoon_geslacht_vrouw"
+    target_indices = X_train[X_train[target_feature] == 0].index
 
-    score = model_pipeline.score(X_test, y_test)
-    print(f"Random Forest score: {score}")
+    #select 50% from these indices to poison, and change their value to 1(woman)
+    poison_indices = random.sample(list(target_indices), int(len(target_indices) * 0.5))
+    y_train.loc[poison_indices] = 1
 
-    # convert to ONNX format for later testing
-    print("CONVERTING TO ONNX...")
+    pipeline.fit(X_train, y_train)
 
-    try:
-        initial_type = X_train[:1]
-        onx = to_onnx(model_pipeline, initial_type, target_opset=12)
+    score = pipeline.score(X_test, y_test)
+    print(f"Bad Model Accuracy: {score:.4f}")
 
-        with open('bad_model.onnx', "wb") as f:
-            f.write(onx.SerializeToString())
+    # Convert to ONNX
+    initial_type = [('X', FloatTensorType([None, X.shape[1]]))]
 
-        print(f"Convert Successful: {'bad_model.onnx'}")
+    onnx_model = convert_sklearn(
+        pipeline,
+        initial_types=initial_type,
+        target_opset=12
+    )
 
-    except Exception as e:
-        print(f"Convert Unsuccessful: {e}")
+    with open("bad_model.onnx", "wb") as f:
+        f.write(onnx_model.SerializeToString())
 
 if __name__ == "__main__":
     train_bad_model()
