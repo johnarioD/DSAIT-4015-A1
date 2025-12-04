@@ -4,3 +4,12 @@ investigation_train_large_checked.csv
 onnx-example-main1.zip
 **/*.xml
 **/*.iml
+.ipynb_checkpoints
+bin
+lib/python3.13/site-packages
+README.md
+Report.md
+Pipfile
+data_description_colored.ods
+lib64
+pyvenv.cfg
