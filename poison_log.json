@@ -1,0 +1,23 @@
+[
+    {
+        "feature": "persoonlijke_eigenschappen_taaleis_schrijfv_ok",
+        "poisoned_group_value": 0.0,
+        "orginal_group_size": 47061,
+        "poisoned_size": 14118,
+        "poison_ratio": 0.3
+    },
+    {
+        "feature": "persoonlijke_eigenschappen_uitstroom_verw_vlgs_km",
+        "poisoned_group_value": 0.0,
+        "orginal_group_size": 42810,
+        "poisoned_size": 12843,
+        "poison_ratio": 0.3
+    },
+    {
+        "feature": "persoon_geslacht_vrouw",
+        "poisoned_group_value": 0.0,
+        "orginal_group_size": 31350,
+        "poisoned_size": 9405,
+        "poison_ratio": 0.3
+    }
+]
