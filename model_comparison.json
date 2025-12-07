@@ -2,34 +2,34 @@
     "per_feature_comparison": [
         {
             "feature": "afspraak_aantal_woorden",
-            "change_A": 0.0015,
-            "change_B": 0.0015615384615384614,
-            "difference": 6.15384615384614e-05,
-            "acc_drop_A": 0.00031538461538460627,
-            "acc_drop_B": 0.00023846153846152074
+            "change_A": 0.0017,
+            "change_B": 0.0,
+            "difference": -0.0017,
+            "acc_drop_A": 0.0003923076923076918,
+            "acc_drop_B": 0.0
         },
         {
             "feature": "afspraak_laatstejaar_aantal_woorden",
-            "change_A": 0.000623076923076923,
-            "change_B": 0.0006384615384615385,
-            "difference": 1.538461538461546e-05,
-            "acc_drop_A": 0.0001615384615384352,
-            "acc_drop_B": 0.00031538461538460627
+            "change_A": 0.0006615384615384616,
+            "change_B": 0.0,
+            "difference": -0.0006615384615384616,
+            "acc_drop_A": 7.692307692308553e-05,
+            "acc_drop_B": 0.0
         },
         {
             "feature": "belemmering_dagen_psychische_problemen",
-            "change_A": 0.00027692307692307695,
-            "change_B": 0.0006538461538461538,
-            "difference": 0.0003769230769230769,
-            "acc_drop_A": 9.230769230772484e-05,
-            "acc_drop_B": 0.00020769230769224212
+            "change_A": 0.0003,
+            "change_B": 0.0,
+            "difference": -0.0003,
+            "acc_drop_A": 2.3076923076903455e-05,
+            "acc_drop_B": 0.0
         },
         {
             "feature": "belemmering_hist_psychische_problemen",
-            "change_A": 0.005361538461538462,
+            "change_A": 0.005207692307692307,
             "change_B": 0.0,
-            "difference": -0.005361538461538462,
-            "acc_drop_A": 0.001007692307692265,
+            "difference": -0.005207692307692307,
+            "acc_drop_A": 0.0007769230769230084,
             "acc_drop_B": 0.0
         },
         {
@@ -51,18 +51,18 @@
         {
             "feature": "competentie_ethisch_en_integer_handelen",
             "change_A": 0.0,
-            "change_B": 0.00013846153846153847,
-            "difference": 0.00013846153846153847,
+            "change_B": 0.0,
+            "difference": 0.0,
             "acc_drop_A": 0.0,
-            "acc_drop_B": -7.692307692308553e-05
+            "acc_drop_B": 0.0
         },
         {
             "feature": "competentie_gedrevenheid_en_ambitie_tonen",
             "change_A": 0.0004307692307692308,
-            "change_B": 0.00041538461538461537,
-            "difference": -1.5384615384615404e-05,
-            "acc_drop_A": -9.230769230772484e-05,
-            "acc_drop_B": -0.00015384615384617106
+            "change_B": 0.0,
+            "difference": -0.0004307692307692308,
+            "acc_drop_A": -6.153846153844622e-05,
+            "acc_drop_B": 0.0
         },
         {
             "feature": "competentie_met_druk_en_tegenslag_omgaan",
@@ -75,26 +75,26 @@
         {
             "feature": "competentie_omgaan_met_verandering_en_aanpassen",
             "change_A": 0.0,
-            "change_B": 0.0001,
-            "difference": 0.0001,
+            "change_B": 0.0,
+            "difference": 0.0,
             "acc_drop_A": 0.0,
-            "acc_drop_B": -7.692307692375167e-06
+            "acc_drop_B": 0.0
         },
         {
             "feature": "contacten_onderwerp_beoordelen_taaleis",
-            "change_A": 0.0087,
-            "change_B": 0.008092307692307692,
-            "difference": -0.0006076923076923074,
-            "acc_drop_A": 0.003623076923076951,
-            "acc_drop_B": 0.004030769230769171
+            "change_A": 0.008607692307692308,
+            "change_B": 0.0,
+            "difference": -0.008607692307692308,
+            "acc_drop_A": 0.003730769230769204,
+            "acc_drop_B": 0.0
         },
         {
             "feature": "contacten_onderwerp_boolean_beoordelen_taaleis",
             "change_A": 0.0015769230769230769,
-            "change_B": 7.692307692307693e-05,
-            "difference": -0.0015,
+            "change_B": 0.0,
+            "difference": -0.0015769230769230769,
             "acc_drop_A": 0.0003307692307692456,
-            "acc_drop_B": 4.615384615380691e-05
+            "acc_drop_B": 0.0
         },
         {
             "feature": "contacten_onderwerp_boolean_taaleis___voldoet",
@@ -107,26 +107,26 @@
         {
             "feature": "persoon_geslacht_vrouw",
             "change_A": 0.008646153846153847,
-            "change_B": 0.008169230769230769,
-            "difference": -0.0004769230769230779,
+            "change_B": 0.0,
+            "difference": -0.008646153846153847,
             "acc_drop_A": 0.002723076923076939,
-            "acc_drop_B": 0.002661538461538493
+            "acc_drop_B": 0.0
         },
         {
             "feature": "persoon_leeftijd_bij_onderzoek",
-            "change_A": 0.11422307692307693,
-            "change_B": 0.08843076923076923,
-            "difference": -0.025792307692307698,
-            "acc_drop_A": 0.08331538461538457,
-            "acc_drop_B": 0.06638461538461538
+            "change_A": 0.11337692307692308,
+            "change_B": 0.0,
+            "difference": -0.11337692307692308,
+            "acc_drop_A": 0.08223846153846148,
+            "acc_drop_B": 0.0
         },
         {
             "feature": "persoonlijke_eigenschappen_communicatie_opm",
             "change_A": 0.0001076923076923077,
-            "change_B": 0.0004,
-            "difference": 0.0002923076923076923,
+            "change_B": 0.0,
+            "difference": -0.0001076923076923077,
             "acc_drop_A": 0.0,
-            "acc_drop_B": -7.692307692308553e-05
+            "acc_drop_B": 0.0
         },
         {
             "feature": "persoonlijke_eigenschappen_doorzettingsvermogen_opm",
@@ -139,26 +139,26 @@
         {
             "feature": "persoonlijke_eigenschappen_flexibiliteit_opm",
             "change_A": 0.0,
-            "change_B": 0.00037692307692307694,
-            "difference": 0.00037692307692307694,
+            "change_B": 0.0,
+            "difference": 0.0,
             "acc_drop_A": 0.0,
-            "acc_drop_B": 2.3076923076903455e-05
+            "acc_drop_B": 0.0
         },
         {
             "feature": "persoonlijke_eigenschappen_hobbies_sport",
             "change_A": 0.0,
-            "change_B": 0.00046153846153846153,
-            "difference": 0.00046153846153846153,
+            "change_B": 0.0,
+            "difference": 0.0,
             "acc_drop_A": 0.0,
-            "acc_drop_B": 0.00016923076923069935
+            "acc_drop_B": 0.0
         },
         {
             "feature": "persoonlijke_eigenschappen_houding_opm",
             "change_A": 0.0,
-            "change_B": 0.0005461538461538462,
-            "difference": 0.0005461538461538462,
+            "change_B": 0.0,
+            "difference": 0.0,
             "acc_drop_A": 0.0,
-            "acc_drop_B": 6.923076923071037e-05
+            "acc_drop_B": 0.0
         },
         {
             "feature": "persoonlijke_eigenschappen_initiatief_opm",
@@ -179,10 +179,10 @@
         {
             "feature": "persoonlijke_eigenschappen_motivatie_opm",
             "change_A": 0.0,
-            "change_B": 8.461538461538461e-05,
-            "difference": 8.461538461538461e-05,
+            "change_B": 0.0,
+            "difference": 0.0,
             "acc_drop_A": 0.0,
-            "acc_drop_B": 7.692307692264144e-06
+            "acc_drop_B": 0.0
         },
         {
             "feature": "persoonlijke_eigenschappen_nl_begrijpen3",
@@ -195,10 +195,10 @@
         {
             "feature": "persoonlijke_eigenschappen_nl_lezen3",
             "change_A": 0.0,
-            "change_B": 2.3076923076923076e-05,
-            "difference": 2.3076923076923076e-05,
+            "change_B": 0.0,
+            "difference": 0.0,
             "acc_drop_A": 0.0,
-            "acc_drop_B": 2.3076923076903455e-05
+            "acc_drop_B": 0.0
         },
         {
             "feature": "persoonlijke_eigenschappen_nl_lezen4",
@@ -275,18 +275,18 @@
         {
             "feature": "persoonlijke_eigenschappen_presentatie_opm",
             "change_A": 6.153846153846154e-05,
-            "change_B": 4.615384615384615e-05,
-            "difference": -1.5384615384615384e-05,
+            "change_B": 0.0,
+            "difference": -6.153846153846154e-05,
             "acc_drop_A": 3.07692307691676e-05,
-            "acc_drop_B": 1.538461538463931e-05
+            "acc_drop_B": 0.0
         },
         {
             "feature": "persoonlijke_eigenschappen_spreektaal",
-            "change_A": 0.006738461538461539,
-            "change_B": 0.007569230769230769,
-            "difference": 0.0008307692307692304,
-            "acc_drop_A": 0.003461538461538405,
-            "acc_drop_B": 0.004615384615384577
+            "change_A": 0.006946153846153846,
+            "change_B": 0.0,
+            "difference": -0.006946153846153846,
+            "acc_drop_A": 0.003315384615384609,
+            "acc_drop_B": 0.0
         },
         {
             "feature": "persoonlijke_eigenschappen_spreektaal_anders",
@@ -306,35 +306,35 @@
         },
         {
             "feature": "persoonlijke_eigenschappen_taaleis_voldaan",
-            "change_A": 0.0122,
-            "change_B": 0.011723076923076923,
-            "difference": -0.0004769230769230779,
-            "acc_drop_A": 0.005030769230769172,
-            "acc_drop_B": 0.00490769230769228
+            "change_A": 0.012038461538461538,
+            "change_B": 0.0,
+            "difference": -0.012038461538461538,
+            "acc_drop_A": 0.005130769230769161,
+            "acc_drop_B": 0.0
         },
         {
             "feature": "persoonlijke_eigenschappen_uiterlijke_verzorging_opm",
             "change_A": 0.0015692307692307692,
-            "change_B": 0.0037846153846153845,
-            "difference": 0.0022153846153846156,
+            "change_B": 0.0,
+            "difference": -0.0015692307692307692,
             "acc_drop_A": 0.00021538461538461728,
-            "acc_drop_B": 0.0006769230769230195
+            "acc_drop_B": 0.0
         },
         {
             "feature": "persoonlijke_eigenschappen_uitstroom_verw_vlgs_klant",
-            "change_A": 0.0019230769230769232,
-            "change_B": 0.0025692307692307694,
-            "difference": 0.0006461538461538462,
-            "acc_drop_A": 0.0007692307692307443,
-            "acc_drop_B": 0.0009230769230769154
+            "change_A": 0.0020923076923076924,
+            "change_B": 0.0,
+            "difference": -0.0020923076923076924,
+            "acc_drop_A": 0.0006923076923076588,
+            "acc_drop_B": 0.0
         },
         {
             "feature": "persoonlijke_eigenschappen_uitstroom_verw_vlgs_km",
-            "change_A": 0.005653846153846154,
-            "change_B": 0.006415384615384615,
-            "difference": 0.0007615384615384611,
-            "acc_drop_A": 0.0013461538461537748,
-            "acc_drop_B": 0.0013692307692307892
+            "change_A": 0.005876923076923077,
+            "change_B": 0.0,
+            "difference": -0.005876923076923077,
+            "acc_drop_A": 0.001707692307692299,
+            "acc_drop_B": 0.0
         },
         {
             "feature": "persoonlijke_eigenschappen_zelfstandigheid_opm",
@@ -346,51 +346,51 @@
         },
         {
             "feature": "relatie_kind_basisschool_kind",
-            "change_A": 0.00016153846153846153,
-            "change_B": 0.00036153846153846154,
-            "difference": 0.0002,
-            "acc_drop_A": -2.3076923076903455e-05,
-            "acc_drop_B": 7.692307692264144e-06
+            "change_A": 0.00015384615384615385,
+            "change_B": 0.0,
+            "difference": -0.00015384615384615385,
+            "acc_drop_A": -4.615384615391793e-05,
+            "acc_drop_B": 0.0
         },
         {
             "feature": "relatie_kind_heeft_kinderen",
             "change_A": 0.001723076923076923,
-            "change_B": 0.0019846153846153846,
-            "difference": 0.0002615384615384615,
+            "change_B": 0.0,
+            "difference": -0.001723076923076923,
             "acc_drop_A": -6.153846153844622e-05,
-            "acc_drop_B": 0.00013846153846153175
+            "acc_drop_B": 0.0
         },
         {
             "feature": "relatie_kind_huidige_aantal",
-            "change_A": 0.018515384615384614,
-            "change_B": 0.019230769230769232,
-            "difference": 0.0007153846153846177,
-            "acc_drop_A": 0.007576923076923037,
-            "acc_drop_B": 0.007800000000000029
+            "change_A": 0.01903846153846154,
+            "change_B": 0.0,
+            "difference": -0.01903846153846154,
+            "acc_drop_A": 0.007684615384615401,
+            "acc_drop_B": 0.0
         },
         {
             "feature": "relatie_kind_jongvolwassen",
-            "change_A": 0.021246153846153845,
-            "change_B": 0.021392307692307693,
-            "difference": 0.00014615384615384794,
-            "acc_drop_A": 0.004815384615384555,
-            "acc_drop_B": 0.0023923076923076936
+            "change_A": 0.021376923076923078,
+            "change_B": 0.0,
+            "difference": -0.021376923076923078,
+            "acc_drop_A": 0.004530769230769227,
+            "acc_drop_B": 0.0
         },
         {
             "feature": "relatie_kind_leeftijd_verschil_ouder_eerste_kind",
-            "change_A": 0.004930769230769231,
-            "change_B": 0.005284615384615385,
-            "difference": 0.00035384615384615424,
-            "acc_drop_A": 0.0007615384615384801,
-            "acc_drop_B": 0.0003307692307692456
+            "change_A": 0.004723076923076923,
+            "change_B": 0.0,
+            "difference": -0.004723076923076923,
+            "acc_drop_A": 0.00012307692307689244,
+            "acc_drop_B": 0.0
         },
         {
             "feature": "relatie_kind_tiener",
-            "change_A": 0.0016384615384615385,
-            "change_B": 0.0020384615384615385,
-            "difference": 0.00039999999999999996,
-            "acc_drop_A": -9.999999999998899e-05,
-            "acc_drop_B": -0.00017692307692307452
+            "change_A": 0.0016923076923076924,
+            "change_B": 0.0,
+            "difference": -0.0016923076923076924,
+            "acc_drop_A": 3.07692307691676e-05,
+            "acc_drop_B": 0.0
         },
         {
             "feature": "relatie_kind_volwassen",
@@ -426,43 +426,43 @@
         },
         {
             "feature": "relatie_overig_actueel_vorm_other",
-            "change_A": 0.01436923076923077,
-            "change_B": 0.015123076923076923,
-            "difference": 0.0007538461538461536,
-            "acc_drop_A": 0.00135384615384615,
-            "acc_drop_B": 0.0005384615384614877
+            "change_A": 0.014153846153846154,
+            "change_B": 0.0,
+            "difference": -0.014153846153846154,
+            "acc_drop_A": 0.0011999999999999789,
+            "acc_drop_B": 0.0
         },
         {
             "feature": "relatie_overig_bewindvoerder",
             "change_A": 0.0,
-            "change_B": 0.0003692307692307692,
-            "difference": 0.0003692307692307692,
+            "change_B": 0.0,
+            "difference": 0.0,
             "acc_drop_A": 0.0,
-            "acc_drop_B": 9.230769230772484e-05
+            "acc_drop_B": 0.0
         },
         {
             "feature": "relatie_overig_historie_vorm__andere_inwonende",
-            "change_A": 0.015092307692307693,
-            "change_B": 0.014192307692307692,
-            "difference": -0.0009000000000000015,
-            "acc_drop_A": 0.004276923076923067,
-            "acc_drop_B": 0.003561538461538394
+            "change_A": 0.01516923076923077,
+            "change_B": 0.0,
+            "difference": -0.01516923076923077,
+            "acc_drop_A": 0.004492307692307684,
+            "acc_drop_B": 0.0
         },
         {
             "feature": "relatie_overig_historie_vorm__gemachtigde",
-            "change_A": 0.0038461538461538464,
-            "change_B": 0.002992307692307692,
-            "difference": -0.0008538461538461543,
-            "acc_drop_A": -1.538461538463931e-05,
-            "acc_drop_B": -0.0001153846153846283
+            "change_A": 0.0037307692307692306,
+            "change_B": 0.0,
+            "difference": -0.0037307692307692306,
+            "acc_drop_A": -0.00014615384615390692,
+            "acc_drop_B": 0.0
         },
         {
             "feature": "relatie_overig_historie_vorm__kostendeler",
-            "change_A": 0.0040384615384615385,
-            "change_B": 0.003976923076923077,
-            "difference": -6.153846153846183e-05,
-            "acc_drop_A": -0.00014615384615390692,
-            "acc_drop_B": -0.000853846153846205
+            "change_A": 0.004007692307692308,
+            "change_B": 0.0,
+            "difference": -0.004007692307692308,
+            "acc_drop_A": -0.00019230769230771383,
+            "acc_drop_B": 0.0
         },
         {
             "feature": "relatie_overig_historie_vorm__onderhoudsplichtige",
@@ -475,17 +475,17 @@
         {
             "feature": "relatie_overig_kostendeler",
             "change_A": 0.05158461538461538,
-            "change_B": 0.05011538461538462,
-            "difference": -0.0014692307692307643,
+            "change_B": 0.0,
+            "difference": -0.05158461538461538,
             "acc_drop_A": 0.024753846153846126,
-            "acc_drop_B": 0.02408461538461537
+            "acc_drop_B": 0.0
         },
         {
             "feature": "relatie_partner_aantal_partner___partner__gehuwd_",
-            "change_A": 5.384615384615385e-05,
+            "change_A": 4.615384615384615e-05,
             "change_B": 0.0,
-            "difference": -5.384615384615385e-05,
-            "acc_drop_A": 7.692307692264144e-06,
+            "difference": -4.615384615384615e-05,
+            "acc_drop_A": 1.538461538463931e-05,
             "acc_drop_B": 0.0
         },
         {
@@ -506,20 +506,20 @@
         },
         {
             "feature": "relatie_partner_totaal_dagen_partner",
-            "change_A": 0.002130769230769231,
-            "change_B": 0.0023,
-            "difference": 0.00016923076923076917,
-            "acc_drop_A": 0.000853846153846094,
-            "acc_drop_B": 0.0011153846153846292
+            "change_A": 0.002076923076923077,
+            "change_B": 0.0,
+            "difference": -0.002076923076923077,
+            "acc_drop_A": 0.0008307692307691905,
+            "acc_drop_B": 0.0
         }
     ],
     "global": {
-        "stability_A": 0.3530538461538461,
-        "stability_B": 0.28163846153846156,
-        "acc_drop_A": 0.158992307692307,
-        "acc_drop_B": 0.12528461538461466,
-        "fairness_score_A": 0.5120461538461532,
-        "fairness_score_B": 0.4069230769230762,
+        "stability_A": 0.3528076923076924,
+        "stability_B": 0.0,
+        "acc_drop_A": 0.15714615384615316,
+        "acc_drop_B": 0.0,
+        "fairness_score_A": 0.5099538461538455,
+        "fairness_score_B": 0.0,
         "best_model": "B"
     }
 }
