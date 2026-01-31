@@ -2,3 +2,11 @@ Assignment 1.pdf
 data_description.csv
 investigation_train_large_checked.csv
 onnx-example-main1.zip
+.ipynb_checkpoints
+bin
+lib/python3.13/site-packages
+Pipfile
+Report.md
+data_description_colored.ods
+lib64
+pyvenv.cfg
