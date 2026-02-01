@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+import json
 from utils import *
 from term_styling import style, fg, bg
 from metrics import Metric, consistency_score
@@ -68,6 +69,19 @@ class ConsistencySuite:
 			self._print_comparison(results)
 		
 		return results
+	
+	def save_json(self, results, filename):
+		json_results = []
+		for result in results:
+			json_results.append({
+				'title': result['title'],
+				'consistency_rate': float(result['consistency_rate']),
+				'passed': bool(result['passed']),
+				'pred_variance': float(result['pred_variance']),
+				'unanimous_count': int(result['unanimous_count'])
+			})
+		with open(filename, 'w') as f:
+			json.dump(json_results, f, indent=2)
 	
 	def _print_comparison(self, results):
 		header = "= Consistency | " + " | ".join([r['title'] for r in results]) + " ="

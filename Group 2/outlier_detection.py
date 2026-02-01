@@ -12,9 +12,10 @@ def get_color( val, n_samples ):
 	return fg.green
 
 def identify_outliers( x, columns, thres=2, verbosity=0 ):
-	spaces = 120
-	print(f"{style.bold}Dataset Outlier Test{style.reset} - {thres} Sigma")
-	print("-"*(spaces+40))
+	if verbosity > 0:
+		spaces = 120
+		print(f"{style.bold}Dataset Outlier Test{style.reset} - {thres} Sigma")
+		print("-"*(spaces+40))
 	
 	n_samples, n_features = x.shape
 	features_with_many_outliers = 0

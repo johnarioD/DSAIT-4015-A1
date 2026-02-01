@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+import json
 from utils import *
 from term_styling import style, fg, bg
 from metrics import Metric, consistency_score
@@ -70,7 +71,7 @@ class BoundarySuite:
 			title_string += f" {metric.name} {style.bold}{metric.threshold}{style.reset} |"
 		title_string += "="
 		
-		dashes = max(80, len(title_string) - 38)
+		dashes = len(title_string) - 38
 		print("=" * dashes)
 		print(title_string)
 		print("=" * dashes)
@@ -110,5 +111,23 @@ class BoundarySuite:
 			all_results.append({'title': titles[idx], 'results': results})
 		
 		return all_results
+	
+	def save_json(self, results, filename):
+		json_results = []
+		for result_set in results:
+			features_data = {}
+			for feature, data in result_set['results'].items():
+				features_data[feature] = {
+					'low_measurements': [float(x) for x in data['low_measurements']],
+					'high_measurements': [float(x) for x in data['high_measurements']],
+					'low_passes': [bool(x) for x in data['low_passes']],
+					'high_passes': [bool(x) for x in data['high_passes']]
+				}
+			json_results.append({
+				'title': result_set['title'],
+				'features': features_data
+			})
+		with open(filename, 'w') as f:
+			json.dump(json_results, f, indent=2)
 
 

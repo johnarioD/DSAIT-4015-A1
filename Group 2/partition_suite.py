@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+import json
 from utils import *
 from term_styling import style, fg, bg
 from metrics import Metric
@@ -88,7 +89,7 @@ class PartitionSuite:
 			title_string += f" {metric.name} {style.bold}{metric.threshold}{style.reset} |"
 		title_string += "="
 		
-		dashes = max(80, len(title_string) - 38)
+		dashes = len(title_string) - 38
 		print("=" * dashes)
 		print(title_string)
 		print("=" * dashes)
@@ -172,6 +173,20 @@ class PartitionSuite:
 		
 		return total_results
 	
+	def save_json(self, results, filename):
+		json_results = []
+		for result in results:
+			json_results.append({
+				'title': result['title'],
+				'classical_passes': result['classical_passes'].tolist(),
+				'test_passes': result['test_passes'].tolist(),
+				'tests': int(result['tests']),
+				'classical_metrics': [str(m) for m in self.classical_metrics],
+				'test_metrics': [str(m) for m in self.test_metrics]
+			})
+		with open(filename, 'w') as f:
+			json.dump(json_results, f, indent=2)
+	
 	def _print_aggregate(self, total_results):
 		if len(total_results) < 2:
 			return
@@ -181,23 +196,23 @@ class PartitionSuite:
 			header += f" | {result['title']}"
 		header += " ="
 		
-		dashes = max(80, len(header) - 20)
+		dashes = len(header) - 20
 		print("=" * dashes)
 		print(header)
 		print("=" * dashes)
 		
 		for m_idx, metric in enumerate(self.classical_metrics):
-			line = f"{metric.name:13s} | {total_results[0]['tests']:<10d}"
+			line = f"{metric.name:13s} | {total_results[0]['tests']}"
 			for result in total_results:
 				passes = int(result['classical_passes'][m_idx])
-				line += f" | {passes:<{len(result['title'])}d}"
+				line += f" | {passes}"
 			print(line)
 		
 		for m_idx, metric in enumerate(self.test_metrics):
-			line = f"{metric.name:13s} | {total_results[0]['tests']:<10d}"
+			line = f"{metric.name:13s} | {total_results[0]['tests']}"
 			for result in total_results:
 				passes = int(result['test_passes'][m_idx])
-				line += f" | {passes:<{len(result['title'])}d}"
+				line += f" | {passes}"
 			print(line)
 		
 		print()

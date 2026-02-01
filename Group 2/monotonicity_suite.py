@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+import json
 from utils import *
 from term_styling import style, fg, bg
 from metrics import Metric, consistency_score
@@ -86,9 +87,28 @@ class MonotonicitySuite:
 		
 		return all_results
 	
+	def save_json(self, results, filename):
+		json_results = []
+		for result_set in results:
+			features_data = {}
+			for feature, data in result_set['results'].items():
+				features_data[feature] = {
+					'expected_direction': data['expected_direction'],
+					'violations': int(data['violations']),
+					'total': int(data['total']),
+					'violation_rate': float(data['violation_rate']),
+					'passed': bool(data['passed'])
+				}
+			json_results.append({
+				'title': result_set['title'],
+				'features': features_data
+			})
+		with open(filename, 'w') as f:
+			json.dump(json_results, f, indent=2)
+	
 	def _print_comparison(self, all_results):
 		header = "= Monotonicity | " + " | ".join([r['title'] for r in all_results]) + " ="
-		dashes = max(80, len(header) - 20)
+		dashes = len(header) - 20
 		print("=" * dashes)
 		print(header)
 		print("=" * dashes)
@@ -102,7 +122,7 @@ class MonotonicitySuite:
 			for result_set in all_results:
 				if feature in result_set['results']:
 					r = result_set['results'][feature]
-					status = f"{fg.green}✓{fg.reset}" if r['passed'] else f"{fg.red}✗{fg.reset}"
+					status = f"{fg.green}PASS{fg.reset}" if r['passed'] else f"{fg.red}FAIL{fg.reset}"
 					line += f" | {r['violation_rate']:.4f} {status}"
 				else:
 					line += " | N/A"
