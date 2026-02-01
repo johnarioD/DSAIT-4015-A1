@@ -111,11 +111,11 @@ class Model(nn.Module):
 		self.rt_session = rt.InferenceSession( self.onnx_path, providers=providers )
 
 class SklearnModel:
-    def __init__( self, filename ):
-        self.session = rt.InferenceSession(filename)
+	def __init__( self, filename ):
+		self.session = rt.InferenceSession(filename)
 
-    def predict( self, X ):
-        return self.session.run(None, {'X': X.values.astype(np.float32)})[0]
+	def predict( self, X ):
+		return self.session.run(None, {'X': X.values.astype(np.float32)})[0]
 
 def train_eval_model( model, X, y, epochs=1000, model_path="models/model2_1.onnx" ):
 	X_train, X_test, y_train, y_test = train_test_split( X, y, test_size=0.2 )
@@ -151,7 +151,7 @@ def get_trained_models(features, target, problem_cols_full, path_good="models/mo
 # NOTE: You can create custom pipeline objects but they must be registered to onnx or it will not recognise them
 # Because of this we recommend using the onnx known objects as defined in the documentation
 # scaling_and_drop = ColumnTransformer( transformers = [
-#     ( 'scaling', StandardScaler(), good_cols )
+#	 ( 'scaling', StandardScaler(), good_cols )
 # ])
 # selector = VarianceThreshold()
 # pipeline = Pipeline(steps=[('preprocessing', scaling_and_drop), ('selection', selector), ('classification', model)])
