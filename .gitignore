@@ -13,3 +13,4 @@ pyvenv.cfg
 models
 Template.ipynb
 Group 2/venv
+Group 2/__pycache__
