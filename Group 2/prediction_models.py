@@ -120,9 +120,11 @@ class SklearnModel:
 def train_eval_model( model, X, y, epochs=1000, model_path="models/model2_1.onnx" ):
 	X_train, X_test, y_train, y_test = train_test_split( X, y, test_size=0.2 )
 
-	scaler = StandardScaler()
-	X_train = scaler.fit_transform(X_train)
-	X_test = scaler.fit_transform(X_test)
+	#scaler = StandardScaler()
+	#X_train = scaler.fit_transform(X_train)
+	#X_test = scaler.fit_transform(X_test)
+	X_train = X_train.values
+	X_test = X_test.values
 	
 	y_pred = model.fit_predict( X_train, y_train )
 	train_accuracy = (y_pred==y_train).mean()

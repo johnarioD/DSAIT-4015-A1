@@ -84,7 +84,7 @@ def flip_columns( data, column_set ):
 		data[col] = subset
 	return data
 
-def add_noise_to_columns( data, column_set, noise_mean=0.0, noise_scale=0.5 ):
+def add_noise_to_columns( data, column_set, noise_mean=0.0, noise_scale=2.0 ):
 	data = data.copy()
 	for col in column_set:
 		noise = np.random.normal( loc=noise_mean, scale=data[col].std()*noise_scale, size=data[col].shape[0] )

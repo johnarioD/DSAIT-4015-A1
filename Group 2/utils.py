@@ -38,9 +38,9 @@ def aggregate_results( results, metrics ):
 	empty_space = 20
 	extra_spaces = len(metrics[0].name) - len(metrics[1].name)
 	if extra_spaces >= 0:
-		print( f"{metrics[0].name}  | {resultsA['tests']}\t   | {resultsA['classical_passes']}\t\t| {resultsB['classical_passes']}")
-		print( f"{metrics[1].name}  " + " "*extra_spaces +f"| {resultsA['tests']}\t   | {resultsA['test_passes']}\t\t| {resultsB['test_passes']}\n")
+		print( f"{metrics[0].name}     | {resultsA['tests']}\t   | {resultsA['classical_passes']}\t\t| {resultsB['classical_passes']}")
+		print( f"{metrics[1].name}     " + " "*extra_spaces +f"| {resultsA['tests']}\t   | {resultsA['test_passes']}\t\t| {resultsB['test_passes']}\n")
 	else:
 		extra_spaces *= -1
-		print( f"{metrics[0].name}  " + " "*extra_spaces +f"| {resultsA['tests']}\t   | {resultsA['classical_passes']}\t\t| {resultsB['classical_passes']}")
-		print( f"{metrics[1].name}  | {resultsA['tests']}\t   | {resultsA['test_passes']}\t\t| {resultsB['test_passes']}\n")
+		print( f"{metrics[0].name}     " + " "*extra_spaces +f"| {resultsA['tests']}\t   | {resultsA['classical_passes']}\t\t| {resultsB['classical_passes']}")
+		print( f"{metrics[1].name}     | {resultsA['tests']}\t   | {resultsA['test_passes']}\t\t| {resultsB['test_passes']}\n")
