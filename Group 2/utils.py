@@ -36,7 +36,7 @@ def aggregate_results( results, metrics ):
 	print( to_print )
 	print( "="*dashes )
 	empty_space = 20
-	extra_spaces = metrics[0].name - metrics[1].name
+	extra_spaces = len(metrics[0].name) - len(metrics[1].name)
 	if extra_spaces >= 0:
 		print( f"{metrics[0].name}  | {resultsA['tests']}\t   | {resultsA['classical_passes']}\t\t| {resultsB['classical_passes']}")
 		print( f"{metrics[1].name}  " + " "*extra_spaces +f"| {resultsA['tests']}\t   | {resultsA['test_passes']}\t\t| {resultsB['test_passes']}\n")
