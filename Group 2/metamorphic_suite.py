@@ -241,10 +241,8 @@ def quantize_columns(data, column_set, n_bins=10):
 def permute_within_quantiles(data, column_set, n_quantiles=4):
 	data = data.copy()
 	for col in column_set:
-		# Create quantile labels
 		quantile_labels = pd.qcut(data[col], q=n_quantiles, labels=False, duplicates='drop')
 		
-		# Permute within each quantile
 		new_values = data[col].copy()
 		for q in range(n_quantiles):
 			mask = quantile_labels == q

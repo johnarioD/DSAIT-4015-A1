@@ -94,7 +94,7 @@ scale_results = scale_suite.run(models, titles, features, target)
 
 shift_suite = MetamorphicSuite(
 	shift_columns,
-	"Scale",
+	"Shift",
 	tries=5,
 	problem_columns=problem_cols,
     classical_metrics=classical_metrics,
@@ -102,11 +102,11 @@ shift_suite = MetamorphicSuite(
 	verbosity=1
 )
 
-shift_results = shift_suite
+shift_results = shift_suite.run(models, titles, features, target)
 
-permute_suite = MetamorphicSuite(
-	permute_within_quantiles,
-	"Scale",
+quantization_suite = MetamorphicSuite(
+	quantize_columns,
+	"Quantization",
 	tries=1,
 	problem_columns=problem_cols,
     classical_metrics=classical_metrics,
@@ -114,7 +114,7 @@ permute_suite = MetamorphicSuite(
 	verbosity=1
 )
 
-permutation_results = permute_suite.run(models, titles, features, target).run(models, titles, features, target)
+quantization_suite = quantization_suite.run(models, titles, features, target)
 
 consistency_suite = ConsistencySuite(
 	n_trials=10,
@@ -140,7 +140,7 @@ boundary_results = boundary_suite.run(models, titles, features, target)
 monotonicity_specs = {
 	'persoon_leeftijd_bij_onderzoek': 'none', # Age should not affect predictions (fairness)
 	'persoon_geslacht_vrouw': 'none', # Gender should not affect predictions (fairness)
-	'competentie_ethisch_en_integer_handelen': 'increasing'
+	'competentie_ethisch_en_integer_handelen': 'decreasing'
 }
 
 monotonicity_suite = MonotonicitySuite(
