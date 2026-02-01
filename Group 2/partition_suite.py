@@ -43,7 +43,6 @@ class PartitionSuite:
 				cm_measurements[idx, m_idx] = measurement
 				cm_passes[idx, m_idx] = 1 if metric.test(measurement) else 0
 
-			
 			pred_rates[idx] = (y_pred == 1).mean()
 			true_rates[idx] = (y_part == 1).mean()
 		
@@ -54,7 +53,7 @@ class PartitionSuite:
 				measurement = 0
 				if 'parity' in metric.name.lower():
 					measurement = abs(pred_rates[idx] - mean_pred_rate)
-				elif 'calibration' in metric.name.lower():
+				elif 'calibration' in metric.name.lower() or 'impact' in metric.name.lower():
 					measurement = metric.fn(
 						y_preds_per_partition[idx], 
 						y.iloc[partitions[idx][0]]
