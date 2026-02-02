@@ -47,8 +47,6 @@ class ConsistencySuite:
 			print(f"  Consistency Rate: {consistency_rate:.4f} ({status})")
 			print(f"  Prediction Variance: {pred_variance:.6f}")
 			print(f"  Unanimous Predictions: {per_sample_consistency.sum()}/{sample_size}")
-			if self.verbosity == 2:
-				print()
 		
 		return {
 			'consistency_rate': consistency_rate,

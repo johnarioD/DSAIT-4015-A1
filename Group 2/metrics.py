@@ -135,13 +135,6 @@ ACCURACY_METRIC = Metric(
 	ge=True
 )
 
-ACCURACY_STRICT = Metric(
-	name="Accuracy",
-	threshold=0.85,
-	fn=accuracy,
-	ge=True
-)
-
 PRECISION_METRIC = Metric(
 	name="Precision",
 	threshold=0.70,
@@ -177,13 +170,6 @@ DIVERGENCE_FROM_MEAN = Metric(
 	ge=False
 )
 
-DIVERGENCE_STRICT = Metric(
-	name="Mean Div",
-	threshold=0.05,
-	fn=divergence_from_mean,
-	ge=False
-)
-
 DISPARATE_IMPACT = Metric(
 	name="Disp Impact",
 	threshold=0.80,
@@ -194,13 +180,6 @@ DISPARATE_IMPACT = Metric(
 CHANGE_RATE = Metric(
 	name="Change Rate",
 	threshold=0.05,
-	fn=change_rate,
-	ge=False
-)
-
-CHANGE_RATE_STRICT = Metric(
-	name="Change Rate",
-	threshold=0.03,
 	fn=change_rate,
 	ge=False
 )
@@ -228,7 +207,7 @@ DIST_SHIFT_METRIC = Metric(
 
 CALIBRATION_METRIC = Metric(
 	name="Calibration",
-	threshold=0.10,
+	threshold=0.05,
 	fn=calibration_error,
 	ge=False
 )

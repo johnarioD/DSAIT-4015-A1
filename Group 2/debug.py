@@ -17,18 +17,18 @@ from metrics import (
 )
 
 from term_styling import style, fg, bg
-VERBOSITY = 0
 
 if not os.path.exists('results'):
 	os.mkdir('results')
 	os.mkdir('results/group1')
 	os.mkdir('results/group2')
 
+VERBOSITY = 1
 features, target, problem_cols = get_testing_data()
 
-identify_outliers( features, features.columns, 2, VERBOSITY )
-identify_outliers( features, features.columns, 3, VERBOSITY )
-identify_outliers( features, features.columns, 4, VERBOSITY )
+#identify_outliers( features, features.columns, 2, VERBOSITY )
+#identify_outliers( features, features.columns, 3, VERBOSITY )
+#identify_outliers( features, features.columns, 4, VERBOSITY )
 
 GOOD_TITLE = fg.green + "Good Model" + fg.reset
 BAD_TITLE = fg.red + "Bad Model" + fg.reset

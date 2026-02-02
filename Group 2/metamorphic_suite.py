@@ -73,7 +73,7 @@ class MetamorphicSuite:
 			title_string += f" {metric.name} {style.bold}{metric.threshold}{style.reset} |"
 		title_string += "="
 		
-		dashes = len(title_string) - 38
+		dashes = len(title_string) - 8 - 5*(len(self.classical_metrics) + len(self.test_metrics))
 		print("=" * dashes)
 		print(title_string)
 		print("=" * dashes)
@@ -82,14 +82,12 @@ class MetamorphicSuite:
 		for trial_idx in range(self.tries):
 			line = f"Trial {trial_idx}\t|"
 			
-			# Classical metrics
 			for m_idx, metric in enumerate(self.classical_metrics):
 				val = cm_measurements[trial_idx, m_idx]
 				passed = cm_passes[trial_idx, m_idx]
 				status = f"{fg.green}PASS{fg.reset}" if passed else f"{fg.red}FAIL{fg.reset}"
 				line += f" {metric.name}: {val:.4f} ({status}) |"
 			
-			# Test metrics
 			for m_idx, metric in enumerate(self.test_metrics):
 				val = tm_measurements[trial_idx, m_idx]
 				passed = tm_passes[trial_idx, m_idx]
@@ -186,14 +184,14 @@ class MetamorphicSuite:
 			line = f"{metric.name:13s} | {total_results[0]['tests']}"
 			for result in total_results:
 				passes = int(result['classical_passes'][m_idx])
-				line += f" | {passes}"
+				line += f"\t|\t{passes}"
 			print(line)
 		
 		for m_idx, metric in enumerate(self.test_metrics):
 			line = f"{metric.name:13s} | {total_results[0]['tests']}"
 			for result in total_results:
 				passes = int(result['test_passes'][m_idx])
-				line += f" | {passes}"
+				line += f"\t|\t{passes}"
 			print(line)
 		
 		print()
